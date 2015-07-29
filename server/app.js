@@ -9,7 +9,7 @@ app.set('port', 5000);
 
 app.get("/*", function(req, res) {
     console.log("Serving page");
-    var file = req.params[0] || "views/index.html";
+    var file = req.params[0] || "./views/index.html";
     res.sendFile(path.join(__dirname, "./public/", file));
 });
 

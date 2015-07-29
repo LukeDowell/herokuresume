@@ -8,8 +8,9 @@ var app = express();
 app.set('port', 5000);
 
 app.get("/*", function(req, res) {
+    console.log("Serving page");
     var file = req.params[0] || "views/index.html";
-    res.sendFile(path.join(__dirname, "./public", file));
+    res.sendFile(path.join(__dirname, "./public/", file));
 });
 
 var server = app.listen(app.get('port'), function() {
